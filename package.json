@@ -5,19 +5,21 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js",
-    "test": "jest",
-    "watch": "jest --watch"
+    "test": "./node_modules/jest/bin/jest.js",
+    "watch": "./node_modules/jest/bin/jest.js --watch"
   },
   "author": "David Tynnhammar",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^4.5.0",
     "jest": "^20.0.4",
+    "jest-cli": "^20.0.4",
     "jsdoc": "^3.5.4"
   },
   "dependencies": {
-    "jest-cli": "^20.0.4",
+    "form-data": "^2.3.1",
     "lodash": "^4.17.4",
-    "node-fetch": "^1.7.2"
+    "node-fetch": "^1.7.2",
+    "node-forge": "^0.7.1"
   }
 }
