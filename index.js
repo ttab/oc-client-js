@@ -207,8 +207,6 @@ module.exports = function(host, username, password) {
 
       const url = `${state.host}/search?${querystring.stringify(parameters)}`;
 
-      console.log('url', url);
-
       return fetch(url, {
         headers: authorizationHeaders(state.username, state.password)
       });
