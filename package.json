@@ -1,0 +1,23 @@
+{
+  "name": "oc-client-js",
+  "version": "0.0.1",
+  "description": "Open Content Client library",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js",
+    "test": "jest",
+    "watch": "jest --watch"
+  },
+  "author": "David Tynnhammar",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "jest": "^20.0.4",
+    "jsdoc": "^3.5.4"
+  },
+  "dependencies": {
+    "jest-cli": "^20.0.4",
+    "lodash": "^4.17.4",
+    "node-fetch": "^1.7.2"
+  }
+}
