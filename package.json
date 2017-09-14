@@ -1,6 +1,6 @@
 {
   "name": "oc-client-js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Open Content Client library",
   "main": "index.js",
   "scripts": {

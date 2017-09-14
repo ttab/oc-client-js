@@ -20,12 +20,13 @@ function guessMimeType(filename) {
   return knownTypes.find(({extension}) => filename.endsWith(extension)).type;
 }
 
-module.exports = function(host, username, password) {
+module.exports = function(host, username, password, verbose) {
 
   let state = {
     username,
     password,
-    host
+    host,
+    verbose
   };
 
   return {
@@ -74,6 +75,22 @@ module.exports = function(host, username, password) {
      */
     host: function(host) {
       state.host = host;
+      return this;
+    },
+
+    /**
+     * This method is used to set the verbose property.
+     *
+     * @param {string} verbose Should we have verbose output.
+     * @returns {Object} Returns itself so one can continue build on to it.
+     * @example
+     *
+     * const oc = require('oc-client-js');
+     *
+     * oc().verbose('example-host')
+     */
+    verbose: function(verbose) {
+      state.verbose = verbose;
       return this;
     },
 
@@ -206,6 +223,11 @@ module.exports = function(host, username, password) {
       const parameters = _.merge(defaultOptions, options);
 
       const url = `${state.host}/search?${querystring.stringify(parameters)}`;
+
+      if(state.verbose) {
+        console.log('Current state:', state);
+        console.log('Searching with url:', url);
+      }
 
       return fetch(url, {
         headers: authorizationHeaders(state.username, state.password)

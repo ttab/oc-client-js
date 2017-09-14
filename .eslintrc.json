@@ -20,6 +20,13 @@
         "semi": [
             "error",
             "always"
+        ],
+        "no-console": [
+            "off"
         ]
+    },
+    "globals": {
+        "test": true,
+        "expect": true
     }
 }
