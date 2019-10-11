@@ -7,7 +7,7 @@ const fetch = require('node-fetch'),
 function authorizationHeaders(username, password) {
   const encoded = forge.util.encode64(`${username}:${password}`);
   return {
-    'Authorization': `basic ${encoded}`
+    'Authorization': `Basic ${encoded}`
   };
 }
 
